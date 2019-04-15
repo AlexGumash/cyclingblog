@@ -1,0 +1,19 @@
+@import 'reset.css';
+@import 'header.css';
+@import 'footer.css';
+@import 'container-main.css';
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+.container-main {
+  padding-top: 50px;
+}

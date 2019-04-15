@@ -1,0 +1,72 @@
+@import '../styles/reset.css';
+@import 'header.css';
+@import 'footer.css';
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+.container-main {
+  padding-top: 50px;
+}
+
+.post {
+  display: flex;
+  width: 80%;
+  margin: 0 auto 50px;
+  padding: 20px 10px 10px 10px;
+  border-radius: 10px;
+  background-color: rgb(250, 250, 250);
+}
+
+.container-post {
+  margin-left: 10px;
+  width: 100%;
+}
+
+.post-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(113, 113, 113);
+}
+
+.post-header-item {
+  margin-right: 15px;
+  font-size: 15px;
+  color: rgb(84, 84, 84);
+}
+
+.post-title {
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+}
+
+.post-visitors {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.post-content {
+  font-size: 18px;
+  max-width: 100%;
+  letter-spacing: normal;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  padding-right: 10px;
+}
+
+.post-content-img {
+  max-width: 100%;
+}
