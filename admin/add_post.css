@@ -1,34 +1,16 @@
-@import '../styles/reset.css';
-@import '../styles/header.css';
-
-body{
-  font-family: 'Montserrat', sans-serif;
-}
-
-.container {
-  margin: 0 auto;
-  width: 80%;
-  height: 100%;
-  background-color: rgb(255, 255, 255);
-}
-
 .container-main {
-  height: calc(100vh - 250px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding-top: 50px;
 }
 
-.container-header {
-  align-items: center;
+.add-post {
+  width: 100%;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .form-input-div {
@@ -58,6 +40,46 @@ body{
   transform: translate(0, -2px);
 }
 
+
+
+.select {
+  background-color: rgb(240, 240, 240);
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  height: 25px;
+}
+
+/* .select-option {
+  background-color: rgb(240, 240, 240);
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.2s linear;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+option[selected] {
+  box-shadow: 1px 2px 15px rgb(223, 223, 223);
+  transform: translate(0, -2px);
+} */
+
+
+.textarea {
+  padding: 4px;
+  outline: none;
+  border: none;
+  background-color: rgb(240, 240, 240);
+  border-radius: 10px;
+}
+
+.textarea:focus {
+  box-shadow: 1px 2px 15px rgb(223, 223, 223);
+  transform: translate(0, -2px);
+}
+
+
 .submit-button {
   font-family: 'Montserrat', sans-serif;
   padding: 10px;
@@ -67,6 +89,7 @@ body{
   text-shadow: none;
   transition: 0.2s linear;
   font-size: 15px;
+  align-self: flex-end;
 }
 
 .submit-button:hover {
