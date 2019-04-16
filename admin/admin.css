@@ -1,0 +1,24 @@
+@import '../styles/reset.css';
+@import '../styles/header.css';
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-header {
+  align-items: center;
+}
