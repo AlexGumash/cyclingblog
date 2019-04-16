@@ -68,5 +68,5 @@
 
     </div>
   </div>
-  <?php include '../usable/footer.php' ?>
+  <?php include 'usable/footer.php' ?>
 </body>
