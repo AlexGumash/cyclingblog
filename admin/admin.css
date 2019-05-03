@@ -1,6 +1,7 @@
 @import '../styles/reset.css';
 @import '../styles/header.css';
 @import 'add_post.css';
+@import 'refactor_posts.css';
 
 body{
   font-family: 'Montserrat', sans-serif;

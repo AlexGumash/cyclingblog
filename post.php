@@ -51,7 +51,7 @@
                   $substrings = explode("\n", $str);
                   foreach($substrings as $out)
                   {
-                    preg_match_all('/img [а-яА-ЯёЁa-zA-Z0-9]{0,}\.(?:jp(?:e?g|e|2)|gif|png|tiff?|bmp|ico)$/i',$out,$img);
+                    preg_match_all('/img [а-яА-ЯёЁa-zA-Z0-9]{0,}\.(?:jp(?:e?g|e|2)|gif|png|tiff?|bmp|ico)\s{0,}$/i',$out,$img);
                     if ($img[0][0]) {
                       $src = explode(" ", $img[0][0]);
                       echo "<img src='images/$src[1]' class='post-content-img'>";

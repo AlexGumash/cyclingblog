@@ -1,21 +1,50 @@
 <?php include '../database/connection.php' ?>
 <?php
-// if(isset($_FILES['post_title_img'])){
-//   $errors= array();
-//   $file_name = $_FILES['post_title_img']['name'];
-//   $file_size =$_FILES['post_title_img']['size'];
-//   $file_tmp =$_FILES['post_title_img']['tmp_name'];
-//   $file_type=$_FILES['post_title_img']['type'];
-//   echo $file_name;
-//
-//   if(empty($errors)==true){
-//     move_uploaded_file($file_tmp,"images/".$file_name);
-//     echo "Success";
-//   } else {
-//     print_r($errors);
-//   }
-// }
+  session_start ();
+  $_SESSION = array();
+  $login = $_REQUEST['admin-login'];
+  $pass = $_REQUEST['admin-pass'];
 
+  $pass_hash = hash('md5', $pass);
+  $query = "SELECT * FROM users WHERE login = '$login' AND password = '$pass_hash'";
+
+  $result = mysql_query($query);
+
+  if (mysql_fetch_array($result, MYSQL_ASSOC)) {
+    $_SESSION['login'] = 1;
+  } else {
+     unset($_SESSION['login']);
+  }
+
+  if (!$_SESSION['login']) die ('Требуется учетная запись администратора');
+
+  if (isset($_POST['submit-button'])) {
+
+    if(isset($_FILES['post_title_img'])){
+      $errors= array();
+      $file_name = $_FILES['post_title_img']['name'];
+      $file_size =$_FILES['post_title_img']['size'];
+      $file_tmp =$_FILES['post_title_img']['tmp_name'];
+      $file_type=$_FILES['post_title_img']['type'];
+      if(empty($errors)==true){
+        move_uploaded_file($file_tmp,"../images/".$file_name);
+      } else {
+        print_r($errors);
+      }
+    }
+
+    $post_date = date("y.m.d");
+    $post_title_img = $file_name;
+    $post_title = $_REQUEST['post_name'];
+    $post_section = $_REQUEST['post_section'];
+    $post_short = $_REQUEST['post_short'];
+    $post_content = $_REQUEST['post_content'];
+    $post_visitors = 0;
+
+    $query = "INSERT INTO posts (id, post_date, post_title_img, post_title, post_section, post_short, post_content, post_visitors) VALUES ('NULL', '$post_date', '$file_name', '$post_title', '$post_section', '$post_short', '$post_content', '$post_visitors')";
+		$result = mysql_query($query);
+
+  }
 ?>
 
 <!DOCTYPE html>
@@ -40,35 +69,7 @@
         <span style="font-size: 20px;">Admin</span>
       </div>
 
-      <div class="menu-container">
-        <ul class="menu">
-          <li class="menu-item">
-              <div class="menu-item-link">
-                Добавить запись
-              </div>
-          </li>
-          <li class="menu-item">
-              <div class="menu-item-link">
-                Редактировать записи
-              </div>
-          </li>
-          <li class="menu-item">
-              <div class="menu-item-link">
-                Разместить рекламу
-              </div>
-          </li>
-          <!-- <li class="menu-item">
-              <div class="menu-item-link">
-                Полезное
-              </div>
-          </li>
-          <li class="menu-item">
-              <div class="menu-item-link">
-                Интересное
-              </div>
-          </li> -->
-        </ul>
-      </div>
+      <?php @include 'admin-menu.php' ?>
 
     </div>
   </div>

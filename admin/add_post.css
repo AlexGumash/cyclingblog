@@ -33,6 +33,7 @@
   border: none;
   font-family: 'Montserrat', sans-serif;
   transition: 0.2s linear;
+  width: 200px;
 }
 
 .form-input:focus {
@@ -43,12 +44,15 @@
 
 
 .select {
-  background-color: rgb(240, 240, 240);
-  font-family: 'Montserrat', sans-serif;
-  outline: none;
-  border: none;
-  border-radius: 5px;
+  padding: 4px;
   height: 25px;
+  outline: none;
+  background-color: rgb(240, 240, 240);
+  border-radius: 5px;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.2s linear;
+  width: 200px;
 }
 
 /* .select-option {
@@ -72,6 +76,8 @@ option[selected] {
   border: none;
   background-color: rgb(240, 240, 240);
   border-radius: 10px;
+  resize: none;
+  height: 100%;
 }
 
 .textarea:focus {

@@ -7,7 +7,7 @@
         <span>
           Название:
         </span>
-        <input type="text" name="post_name" autofocus style="width:200px" class="form-input">
+        <input type="text" name="post_name" autofocus class="form-input">
       </div>
 
       <div class="form-input-div" style="width: 50%">

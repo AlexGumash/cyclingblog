@@ -19,7 +19,8 @@
         $query = "SELECT * FROM posts WHERE post_section = 'Покатушки'";
         $res = mysql_query($query);
 
-        $post = mysql_fetch_array($res, MYSQL_ASSOC);
+        // $post = mysql_fetch_array($res, MYSQL_ASSOC);
+        while ($post = mysql_fetch_array($res, MYSQL_ASSOC)) {
       ?>
           <div class="post">
             <div class="post-img">
@@ -55,7 +56,7 @@
               </div>
             </a>
           </div>
-
+        <?php } ?>
     </div>
   </div>
   <?php include '../usable/footer.php' ?>
