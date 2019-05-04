@@ -41,7 +41,7 @@
               <input type="password" name="admin-pass" class="form-input">
             </div>
             <div>
-              <input type="submit" name="submit-button" value="Войти" class="submit-button">
+              <input type="submit" name="submit-button-entry" value="Войти" class="submit-button">
             </div>
           </div>
         </form>

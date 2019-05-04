@@ -1,4 +1,8 @@
 <?php include '../database/connection.php' ?>
+<?php
+session_start();
+if (!$_SESSION['login']) die ('Требуется учетная запись администратора');
+?>
 
 
 <!DOCTYPE html>
@@ -48,7 +52,7 @@
               <span>
                 Название:
               </span>
-              <input type="text" name="post_name" autofocus class="form-input" value="<?php echo $post['post_title'] ?>">
+              <input type="text" name="post_name" autofocus class="form-input" value="<?php echo $post['post_title'] ?>" required>
             </div>
 
             <div class="form-input-div" style="width: 50%">
@@ -82,18 +86,18 @@
               <span>
                 Краткое описание:
               </span>
-              <textarea name="post_short" rows="8" cols="80" class="textarea post-short"><?php echo $post['post_short'] ?></textarea>
+              <textarea name="post_short" rows="8" cols="80" class="textarea post-short" required><?php echo $post['post_short'] ?></textarea>
             </div>
 
-            <div class="form-input-div">
-              <span>
+            <div class="form-input-div form-input-content">
+              <span style="margin-bottom: 30px">
                 Содержание:
               </span>
-              <textarea name="post_content" rows="8" cols="80" class="textarea post-content"><?php echo $post['post_content'] ?></textarea>
+              <textarea name="post_content" class="textarea post-content" required><?php echo $post['post_content'] ?></textarea>
             </div>
 
-            <div>
-              <input type="submit" name="submit-button" value="Изменить" class="submit-button">
+            <div class="submit-button-container">
+              <input type="submit" name="submit-button" value="Внести изменения" class="submit-button">
             </div>
 
           </div>

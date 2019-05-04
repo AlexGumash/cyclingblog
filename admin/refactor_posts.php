@@ -1,5 +1,7 @@
 <?php include '../database/connection.php' ?>
 <?php
+  session_start();
+  if (!$_SESSION['login']) die ('Требуется учетная запись администратора');
   if (isset($_POST['submit-button'])) {
 
     if(isset($_FILES['post_title_img'])){
@@ -42,13 +44,11 @@
   <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
   <script type="text/javascript">
     function deletePost(id){
-      console.log(id);
       $.ajax({
         type: "post",
         url: "delete.php",
         data: {post_id: id}
       }).done(function(result){
-        console.log(result);
         location.reload();
       })
     }
@@ -76,7 +76,7 @@
 
       <div class="posts">
         <?php
-          $query = "SELECT * FROM posts";
+          $query = "SELECT * FROM posts ORDER BY post_date DESC";
           $res = mysql_query($query);
 
           while ($post = mysql_fetch_array($res, MYSQL_ASSOC)) {
@@ -86,11 +86,11 @@
           <div class="post_title">
             <?php echo $post['post_title'] ?>
           </div>
-          <div class="post_short">
-            <?php echo $post['post_short'] ?>
-          </div>
           <div class="post_date">
             <?php echo $post['post_date'] ?>
+          </div>
+          <div class="post_short">
+            <?php echo $post['post_short'] ?>
           </div>
           <div class="icons">
             <div class="icon icon-edit">

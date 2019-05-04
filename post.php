@@ -11,12 +11,17 @@
   <link rel="stylesheet" href="styles/post.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <title>Новые</title>
-  <base target="_blank">
 </head>
 <body>
   <?php include 'usable/header.php' ?>
   <div class="main">
     <div class="container container-main">
+
+      <a href="#" onclick="history.back();" style="color: black;">
+        <div class="back-button">
+          &#8592; вернуться
+        </div>
+      </a>
 
       <?php
         $post_id = $_REQUEST['post_id'];
@@ -29,6 +34,7 @@
         $query = "UPDATE posts SET post_visitors = $counter WHERE id = $post_id";
         mysql_query($query);
       ?>
+        <div class="post-container">
           <div class="post">
 
             <div class="container-post">
@@ -47,25 +53,27 @@
 
               <div class="post-content">
                 <?php
-                  $str = $post['post_content'];
-                  $substrings = explode("\n", $str);
-                  foreach($substrings as $out)
-                  {
-                    preg_match_all('/img [а-яА-ЯёЁa-zA-Z0-9]{0,}\.(?:jp(?:e?g|e|2)|gif|png|tiff?|bmp|ico)\s{0,}$/i',$out,$img);
-                    if ($img[0][0]) {
-                      $src = explode(" ", $img[0][0]);
-                      echo "<img src='images/$src[1]' class='post-content-img'>";
-                    } else {
-                      echo "<p style='margin-bottom: 10px;'>".$out."</p>";
-                    }
+                $str = $post['post_content'];
+                $substrings = explode("\n", $str);
+                foreach($substrings as $out)
+                {
+                  preg_match_all('/img [а-яА-ЯёЁa-zA-Z0-9]{0,}\.(?:jp(?:e?g|e|2)|gif|png|tiff?|bmp|ico)\s{0,}$/i',$out,$img);
+                  if ($img[0][0]) {
+                    $src = explode(" ", $img[0][0]);
+                    echo "<img src='images/$src[1]' class='post-content-img'>";
+                  } else {
+                    echo "<p style='margin-bottom: 10px;'>".$out."</p>";
                   }
+                }
                 ?>
               </div>
 
             </div>
 
           </div>
+          <?php include 'usable/popular.php' ?>
 
+        </div>
     </div>
   </div>
   <?php include 'usable/footer.php' ?>

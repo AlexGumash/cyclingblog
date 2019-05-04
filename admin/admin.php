@@ -1,19 +1,18 @@
 <?php include '../database/connection.php' ?>
 <?php
   session_start ();
-  $_SESSION = array();
-  $login = $_REQUEST['admin-login'];
-  $pass = $_REQUEST['admin-pass'];
+  if (isset($_REQUEST['submit-button-entry'])) {
+    $login = $_REQUEST['admin-login'];
+    $pass = $_REQUEST['admin-pass'];
 
-  $pass_hash = hash('md5', $pass);
-  $query = "SELECT * FROM users WHERE login = '$login' AND password = '$pass_hash'";
+    $pass_hash = hash('md5', $pass);
+    $query = "SELECT * FROM users WHERE login = '$login' AND password = '$pass_hash'";
 
-  $result = mysql_query($query);
+    $result = mysql_query($query);
 
-  if (mysql_fetch_array($result, MYSQL_ASSOC)) {
-    $_SESSION['login'] = 1;
-  } else {
-     unset($_SESSION['login']);
+    if (mysql_fetch_array($result, MYSQL_ASSOC)) {
+      $_SESSION['login'] = 1;
+    }
   }
 
   if (!$_SESSION['login']) die ('Требуется учетная запись администратора');
