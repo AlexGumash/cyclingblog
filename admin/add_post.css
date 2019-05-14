@@ -28,10 +28,10 @@
   padding: 4px;
   height: 25px;
   outline: none;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(255, 255, 255);
   border-radius: 5px;
   border: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open-sans', sans-serif;
   font-size: 15px;
   transition: 0.2s linear;
   width: 300px;
@@ -51,13 +51,14 @@
 
 
 .select {
+  font-size: 15px;
   padding: 4px;
   height: 25px;
   outline: none;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(255, 255, 255);
   border-radius: 5px;
   border: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open-sans', sans-serif;
   transition: 0.2s linear;
   width: 200px;
 }
@@ -78,11 +79,12 @@ option[selected] {
 
 
 .textarea {
+  font-family: 'Open-sans', sans-serif;
   font-size: 15px;
   padding: 4px;
   outline: none;
   border: none;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   resize: none;
   height: 100%;

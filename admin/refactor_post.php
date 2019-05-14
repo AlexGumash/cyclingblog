@@ -13,6 +13,22 @@ if (!$_SESSION['login']) die ('Требуется учетная запись а
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="admin.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=vjrxxkm7nqxh4y8r0xn6a4sg3fpa2bujpv3aar7w78wx8x3k"></script>
+  <script>
+  tinymce.init({
+    selector: ".post-content",  // change this value according to your HTML
+    plugins: 'autoresize fullpage searchreplace advcode visualblocks visualchars fullscreen image link media mediaembed codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount tinymcespellchecker a11ychecker imagetools textpattern help formatpainter mentions linkchecker',
+    toolbar: 'formatselect | bold italic strikethrough forecolor backcolor formatpainter | link image media | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent | removeformat | addcomment',
+    autoresize_bottom_margin: 70
+  });
+  tinymce.init({
+    selector: ".post-short",  // change this value according to your HTML
+    plugins: 'autoresize ',
+    toolbar: 'bold italic forecolor backcolor ',
+    width: '500px',
+    menubar: false
+  });
+  </script>
   <title>Admin</title>
 </head>
 <body>

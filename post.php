@@ -53,18 +53,16 @@
 
               <div class="post-content">
                 <?php
-                $str = $post['post_content'];
-                $substrings = explode("\n", $str);
-                foreach($substrings as $out)
-                {
-                  preg_match_all('/img [а-яА-ЯёЁa-zA-Z0-9]{0,}\.(?:jp(?:e?g|e|2)|gif|png|tiff?|bmp|ico)\s{0,}$/i',$out,$img);
-                  if ($img[0][0]) {
-                    $src = explode(" ", $img[0][0]);
-                    echo "<img src='images/$src[1]' class='post-content-img'>";
-                  } else {
-                    echo "<p style='margin-bottom: 10px;'>".$out."</p>";
-                  }
-                }
+                  echo $post['post_content'];
+
+                // $str = $post['post_content'];
+                // $substrings = explode("\d", $str);
+                // foreach($substrings as $out)
+                // {
+                //   if ($out != "\n") {
+                //     echo $out;
+                //   }
+                // }
                 ?>
               </div>
 

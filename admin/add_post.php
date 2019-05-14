@@ -33,14 +33,14 @@
         <span>
           Краткое описание:
         </span>
-        <textarea name="post_short" rows="8" cols="80" class="textarea post-short" required></textarea>
+        <textarea name="post_short" rows="8" cols="80" class="textarea post-short"></textarea>
       </div>
 
       <div class="form-input-div form-input-content">
         <span style="margin-bottom: 30px">
           Содержание:
         </span>
-        <textarea name="post_content" class="textarea post-content" required onkeydown="resize(this)"></textarea>
+        <textarea name="post_content" class="textarea post-content"></textarea>
       </div>
 
       <div class="submit-button-container">
