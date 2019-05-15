@@ -17,9 +17,21 @@ if (!$_SESSION['login']) die ('Требуется учетная запись а
   <script>
   tinymce.init({
     selector: ".post-content",  // change this value according to your HTML
-    plugins: 'autoresize fullpage searchreplace advcode visualblocks visualchars fullscreen image link media mediaembed codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount tinymcespellchecker a11ychecker imagetools textpattern help formatpainter mentions linkchecker',
+    plugins: 'autoresize fullscreen image link media table anchor imagetools textpattern advcode lists',
+    // plugins: 'autoresize fullpage searchreplace advcode visualblocks visualchars fullscreen image link media mediaembed codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount tinymcespellchecker a11ychecker imagetools textpattern help formatpainter mentions linkchecker',
     toolbar: 'formatselect | bold italic strikethrough forecolor backcolor formatpainter | link image media | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent | removeformat | addcomment',
-    autoresize_bottom_margin: 70
+    autoresize_bottom_margin: 70,
+    width: '80%',
+    image_prepend_url: "../images/",
+    image_dimensions: false,
+    image_class_list: [
+      {
+        title: 'None', value: ''
+      },
+      {
+        title: 'Image', value: 'img-in-post'
+      }
+    ]
   });
   tinymce.init({
     selector: ".post-short",  // change this value according to your HTML

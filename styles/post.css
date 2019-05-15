@@ -81,6 +81,7 @@ body{
 }
 
 .post-content {
+  align-items: center;
   font-size: 18px;
   max-width: 100%;
   letter-spacing: normal;
@@ -99,4 +100,22 @@ body{
 
 .post-content-img {
   max-width: 100%;
+}
+
+.post-title-image {
+  max-height: 80vh;
+  max-width: 95%;
+  display: block;
+  margin: 0 auto;
+}
+
+.img-in-post {
+  max-width: 95%;
+  max-height: 80vh;
+  display: block;
+  margin: 0 auto;
+}
+
+ul, ol {
+  margin: 0;
 }

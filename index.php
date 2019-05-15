@@ -1,4 +1,8 @@
 <?php include 'database/connection.php' ?>
+<?php
+  // session_start();
+  // $_SESSION['login'] = 0;
+?>
 
 <!DOCTYPE html>
 <html lang="en">

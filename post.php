@@ -52,17 +52,10 @@
               </div>
 
               <div class="post-content">
+                <?php $src = $post['post_title_img'] ?>
+                <img src="<?php echo "images/$src"; ?>" alt="post title image" class="post-title-image">
                 <?php
                   echo $post['post_content'];
-
-                // $str = $post['post_content'];
-                // $substrings = explode("\d", $str);
-                // foreach($substrings as $out)
-                // {
-                //   if ($out != "\n") {
-                //     echo $out;
-                //   }
-                // }
                 ?>
               </div>
 

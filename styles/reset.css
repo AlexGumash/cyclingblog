@@ -1,8 +1,8 @@
-html, body, div, span, applet, object, iframe, p, blockquote, pre,
+html, body, div, applet, object, iframe, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, sub, sup, tt, var,
-b, u, i, center,
+del, dfn, img, ins, kbd, s, samp,
+small, tt, var,
+b, center,
 dl, dt, dd,
 fieldset, form, label, legend, caption, tbody, tfoot,
 article, aside, canvas, details, embed,
@@ -24,9 +24,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-}
-ol, ul {
-	list-style: none;
 }
 blockquote, q {
 	quotes: none;
