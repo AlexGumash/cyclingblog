@@ -1,7 +1,7 @@
 <?php include '../database/connection.php' ?>
 <?php
   session_start();
-  if (!$_SESSION['login']) die ('Требуется учетная запись администратора');
+  if ($_SESSION['rights'] != 'admin') die ('Требуется учетная запись администратора');
   if (isset($_POST['submit-button'])) {
 
     if(isset($_FILES['post_title_img'])){
@@ -25,10 +25,10 @@
     $id = $_REQUEST['id'];
     $query = "UPDATE posts SET post_date = '$post_date', post_title_img = '$post_title_img', post_title = '$post_title', post_section = '$post_section', post_short = '$post_short', post_content = '$post_content' WHERE id = '$id'";
 
-    $result = mysql_query($query);
+    $result = mysqli_query($date, $query);
 
     if (!$result) {
-      echo mysql_error();
+      echo mysqli_error($date);
     }
   }
 ?>
@@ -77,9 +77,9 @@
       <div class="posts">
         <?php
           $query = "SELECT * FROM posts ORDER BY post_date DESC";
-          $res = mysql_query($query);
+          $res = mysqli_query($date, $query);
 
-          while ($post = mysql_fetch_array($res, MYSQL_ASSOC)) {
+          while ($post = mysqli_fetch_array($res, MYSQL_ASSOC)) {
         ?>
 
         <div class="post">

@@ -43,6 +43,19 @@
             </div>
           </a>
         </li>
+        <li class="menu-item">
+          <a href="../user/entry.php">
+            <div class="menu-item-link">
+              <?php
+              if (!$_SESSION['login']) {
+                echo "Войти";
+              } else {
+                echo $_SESSION['login'] . "<span style='color: rgb(255, 229, 133); font-weight: bold'> Выход</span>";
+              }
+               ?>
+            </div>
+          </a>
+        </li>
       </ul>
     </div>
 

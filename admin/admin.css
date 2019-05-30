@@ -1,7 +1,9 @@
 @import '../styles/reset.css';
 @import '../styles/header.css';
+@import '../styles/footer.css';
 @import 'add_post.css';
 @import 'refactor_posts.css';
+@import 'preps.css';
 
 body{
   font-family: 'Montserrat', sans-serif;

@@ -1,8 +1,8 @@
 <?php include 'database/connection.php' ?>
 <?php
-  // session_start();
-  // $_SESSION['login'] = 0;
+  session_start();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,9 +23,9 @@
         <?php
         $realtime = time();
         $query = "SELECT * FROM posts ORDER BY post_date DESC";
-        $res = mysql_query($query);
+        $res = mysqli_query($date, $query);
 
-        while ($post = mysql_fetch_array($res, MYSQL_ASSOC)) {
+        while ($post = mysqli_fetch_array($res, MYSQLI_ASSOC)) {
           $posttime = strtotime($post['post_date']);
 
           $datediff = ($realtime - $posttime) / (60 * 60 * 24);
@@ -71,7 +71,7 @@
             </div>
 
             <?php
-            $post = mysql_fetch_array($res, MYSQL_ASSOC);
+            $post = mysqli_fetch_array($res, MYSQLI_ASSOC);
             $posttime = strtotime($post['post_date']);
 
             $datediff = ($realtime - $posttime) / (60 * 60 * 24);

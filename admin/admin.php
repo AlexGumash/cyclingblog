@@ -1,21 +1,7 @@
 <?php include '../database/connection.php' ?>
 <?php
   session_start ();
-  if (isset($_REQUEST['submit-button-entry'])) {
-    $login = $_REQUEST['admin-login'];
-    $pass = $_REQUEST['admin-pass'];
-
-    $pass_hash = hash('md5', $pass);
-    $query = "SELECT * FROM users WHERE login = '$login' AND password = '$pass_hash'";
-
-    $result = mysql_query($query);
-
-    if (mysql_fetch_array($result, MYSQL_ASSOC)) {
-      $_SESSION['login'] = 1;
-    }
-  }
-
-  if (!$_SESSION['login']) die ('Требуется учетная запись администратора');
+  if ($_SESSION['rights'] != 'admin') die ('Требуется учетная запись администратора');
 
   if (isset($_POST['submit-button'])) {
 
@@ -44,9 +30,9 @@
     $post_visitors = 0;
 
     $query = "INSERT INTO posts (id, post_date, post_title_img, post_title, post_section, post_short, post_content, post_visitors) VALUES ('NULL', '$post_date', '$file_name', '$post_title', '$post_section', '$post_short', '$post_content', '$post_visitors')";
-		$result = mysql_query($query);
+		$result = mysqli_query($date, $query);
     if (!$result) {
-      echo mysql_error();
+      echo mysqli_error($date);
     }
   }
 ?>

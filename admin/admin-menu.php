@@ -15,6 +15,13 @@
       </a>
     </li>
     <li class="menu-item">
+      <a href="preps.php">
+        <div class="menu-item-link">
+          Предложка
+        </div>
+      </a>
+    </li>
+    <li class="menu-item">
       <a href="../index.php">
         <div class="menu-item-link">
           На главную

@@ -67,20 +67,20 @@ if ($_SESSION['rights'] != 'admin') die ('Требуется учетная за
         <?php
           $id = $_REQUEST['id'];
 
-          $query = "SELECT * FROM posts WHERE id = '$id'";
+          $query = "SELECT * FROM preps WHERE id = '$id'";
 
           $result = mysqli_query($date, $query);
 
-          $post = mysqli_fetch_array($result, MYSQL_ASSOC)
+          $prep = mysqli_fetch_array($result, MYSQL_ASSOC)
         ?>
-        <form class="add-post-form" action="refactor_posts.php?id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
+        <form class="add-post-form" action="preps.php?id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
           <div class="form-container">
 
             <div class="form-input-div" style="width: 50%">
               <span>
                 Название:
               </span>
-              <input type="text" name="post_name" autofocus class="form-input" value="<?php echo $post['post_title'] ?>" required>
+              <input type="text" name="post_name" autofocus class="form-input" value="<?php echo $prep['prep_title'] ?>" required>
             </div>
 
             <div class="form-input-div" style="width: 50%">
@@ -88,16 +88,16 @@ if ($_SESSION['rights'] != 'admin') die ('Требуется учетная за
                 Рубрика:
               </span>
               <select class="select" name="post_section" size="1">
-                <option value="Покатушки" class="select-option" <?php if ($post['post_section'] == 'Покатушки') {
+                <option value="Покатушки" class="select-option" <?php if ($prep['prep_section'] == 'Покатушки') {
                   echo "selected";
                 } ?>>Покатушки</option>
-                <option value="Путешествия" class="select-option" <?php if ($post['post_section'] == 'Путешествия') {
+                <option value="Путешествия" class="select-option" <?php if ($prep['prep_section'] == 'Путешествия') {
                   echo "selected";
                 } ?>>Путешествия</option>
-                <option value="Полезное" class="select-option" <?php if ($post['post_section'] == 'Полезное') {
+                <option value="Полезное" class="select-option" <?php if ($prep['prep_section'] == 'Полезное') {
                   echo "selected";
                 } ?>>Полезное</option>
-                <option value="Интересное" class="select-option" <?php if ($post['post_section'] == 'Интересное') {
+                <option value="Интересное" class="select-option" <?php if ($prep['prep_section'] == 'Интересное') {
                   echo "selected";
                 } ?>>Интересное</option>
               </select>
@@ -114,18 +114,18 @@ if ($_SESSION['rights'] != 'admin') die ('Требуется учетная за
               <span>
                 Краткое описание:
               </span>
-              <textarea name="post_short" rows="8" cols="80" class="textarea post-short" required><?php echo $post['post_short'] ?></textarea>
+              <textarea name="post_short" rows="8" cols="80" class="textarea post-short" required><?php echo $prep['prep_short'] ?></textarea>
             </div>
 
             <div class="form-input-div form-input-content">
               <span style="margin-bottom: 30px">
                 Содержание:
               </span>
-              <textarea name="post_content" class="textarea post-content" required><?php echo $post['post_content'] ?></textarea>
+              <textarea name="post_content" class="textarea post-content" required><?php echo $prep['prep_content'] ?></textarea>
             </div>
 
             <div class="submit-button-container">
-              <input type="submit" name="submit-button" value="Внести изменения" class="submit-button">
+              <input type="submit" name="submit-button" value="Опубликовать" class="submit-button">
             </div>
 
           </div>

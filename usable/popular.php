@@ -1,11 +1,16 @@
 
 <div class="popular-container">
+  <?php
+    if ($_SESSION['rights'] == 'user') {
+      include 'preps.php';
+    }
+  ?>
   <span class="container-title-popular">Самое просматриваемое</span>
   <?php
     $query = "SELECT * FROM posts ORDER BY post_visitors DESC LIMIT 5";
-    $result = mysql_query($query);
+    $result = mysqli_query($date, $query);
 
-    while ($post = mysql_fetch_array($result, MYSQL_ASSOC)) {
+    while ($post = mysqli_fetch_array($result, MYSQL_ASSOC)) {
   ?>
 
   <div class="post-popular">

@@ -31,7 +31,7 @@
 .menu {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 85%;
   margin: 0 auto;
 }
 
@@ -60,4 +60,8 @@
 
 .menu-item-link {
   margin: auto;
+}
+
+ul, ol ,li {
+  list-style: none;
 }

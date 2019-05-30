@@ -1,5 +1,5 @@
 <?php
-  $date = mysql_connect("localhost", "root", "");
-  mysql_select_db("cyclingblog", $date);
-  mysql_set_charset("utf8");
+  $date = mysqli_connect("localhost", "root", "");
+  mysqli_select_db($date, "cyclingblog");
+  mysqli_set_charset($date, "utf8");
 ?>

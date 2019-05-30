@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+  </head>
+  <body>
+    <table class="table" border="1" cellpadding="10" cellspacing="2">
+      <tr>
+        <td>
+          Какой-то текст
+        </td>
+        <td>
+          Какой-то текст
+        </td>
+      </tr>
+    </table>
+    <button onclick="$('.table').prepend('<tr><td></td><td></td></tr>');">Добавить сверху</button>
+    <button onclick="$('.table').append('<tr><td></td><td></td></tr>');">Добавить снизу</button>
+</body>
+</html>

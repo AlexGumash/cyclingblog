@@ -1,4 +1,5 @@
 <?php include '../database/connection.php' ?>
+<?php session_start() ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,9 +19,9 @@
         <span class="container-title-popular">Полезное</span>
         <?php
         $query = "SELECT * FROM posts WHERE post_section = 'Полезное' ORDER BY post_date DESC";
-        $res = mysql_query($query);
+        $res = mysqli_query($date, $query);
 
-        while ($post = mysql_fetch_array($res, MYSQL_ASSOC)) {
+        while ($post = mysqli_fetch_array($res, MYSQL_ASSOC)) {
           ?>
           <div class="post-line">
 
@@ -60,7 +61,7 @@
           </div>
 
           <?php
-          if ($post = mysql_fetch_array($res, MYSQL_ASSOC)) {
+          if ($post = mysqli_fetch_array($res, MYSQL_ASSOC)) {
 
             ?>
             <div class="post">
